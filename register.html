@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | NovaCart</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+     <nav>
+    <div class="nav-left">
+      <div class="logo">NovaCart</div>
+      <div class="nav-links">
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+    <div class="nav-right">    
+      <button class="btn login-btn" onclick="login()">Login</button>
+      <button class="btn register-btn" onclick="register()">Register</button>
+    </div>
+  </nav>
+
+
+    <main class="main-wrapper">
+        <section class="register-card">
+            <div class="left-side">
+                <div class="content-overlay">
+                    <p class="badge">JOIN NOVACART</p>
+                    <h1>Create an account with practical validation and secure local hashing.</h1>
+                    <p class="demo-text">
+                        This front-end demo uses browser storage, suitable for showcasing UI and JavaScript flow.
+                    </p>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="form-container">
+                    <h2>Create account</h2>
+                    <p class="subtitle">Use a strong password to register.</p>
+                    
+                    <form id="registerForm">
+                        <div class="input-group">
+                            <label>Full name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Email address</label>
+                            <input type="email" placeholder="email@example.com" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Password</label>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                            <small class="helper-text">
+                                Minimum 8 characters with uppercase, lowercase, number, and symbol.
+                            </small>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Confirm password</label>
+                            <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                        </div>
+
+                        <div class="form-footer">
+                            <label class="checkbox-label">
+                                <input type="checkbox" required> I agree to the NovaCart account terms
+                            </label>
+                        </div>
+
+                        <button type="submit" class="register-submit-btn">Create account</button>
+                        
+                        <p class="login-link">
+                            Already registered? <a href="login.html">Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js//register.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaCart | Premium Shopping</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <div class="logo">NovaCart</div>
+      <div class="nav-links">
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="search-wrapper">
+        <div class="search-input-container" id="search-input-container">
+          <input type="text" id="search-input" placeholder="Search products..." oninput="handleSearch()">
+        </div>
+        <div class="search-icon-box" onclick="toggleSearch()">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+      <select id="category-filter" onchange="filterProducts()">
+        <option value="all">All categories</option>
+        <option value="Beauty">Beauty</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Home">Home</option>
+        <option value="outdoor">Outdoor</option>
+        <option value="sports">Sports</option>
+      </select>
+      <button class="btn login-btn" onclick="login()">Login</button>
+      <button class="btn register-btn" onclick="register()">Register</button>
+      <div class="cart-trigger" onclick="toggleCart()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" id="cart-count-val">0</span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h4>NEW COLLECTION</h4>
+      <h1>Shop reliable products for everyday work and life.</h1>
+      <p>Curated electronics, fashion, home goods, and accessories with a fast local cart experience.</p>
+    </div>
+    <div class="stats">
+      <div class="stat-box">
+        <h2>50</h2>
+        <p>Products</p>
+      </div>
+      <div class="stat-box">
+        <h2>5</h2>
+        <p>Pages</p>
+      </div>
+      <div class="stat-box">
+        <h2>24h</h2>
+        <p>Dispatch</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-container">
+    <div class="top-bar">
+      <div>
+        <h2>Products</h2>
+        <p id="showing-text">Loading products...</p>
+      </div>
+      <select class="page-btn" id="sort-filter" onchange="handleSearch()">
+        <option value="featured">Featured</option>
+        <option value="low-high">Price: Low to High</option>
+        <option value="high-low">Price: High to Low</option>
+      </select>
+    </div>
+    <div class="product-grid" id="product-grid">
+    </div>
+    <div class="pagination" id="pagination"></div>
+  </section>
+
+  <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <div>
+        <h3>Shopping Cart</h3>
+        <p id="item-qty-text">0 items</p>
+      </div>
+      <button class="close-cart" onclick="toggleCart()">&times;</button>
+    </div>
+    <div class="cart-items-list" id="cart-list">
+    </div>
+    <div class="cart-summary">
+      <div class="sum-line"><span>Subtotal</span><span id="sub-total">$0.00</span></div>
+      <div class="sum-line"><span>Shipping</span><span id="shipping-total">$0.00</span></div>
+      <div class="total-line"><span>Total</span><span id="final-total">$0.00</span></div>
+      <button class="btn-clearcart" id="clearcart-btn" onclick="clearcart()">ClearCart</button>
+      <button class="btn-checkout" id="checkout-btn" disabled onclick="location.href='login.html'">Checkout</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
